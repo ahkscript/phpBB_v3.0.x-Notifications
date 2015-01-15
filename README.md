@@ -76,6 +76,9 @@ var NotifsServerSide_email_chk = \''.$NotifsServerSide_email_chk.'\';
 <!-- ENDIF -->
 <!-- ENDIF -->
 ```
+**NOTE!** : You will need to update this line from the code :  
+`require '/path/to/baseDir/boards/notifs.php';`  
+Following our example, say our root directory is `/` and the html files are in `/public_html`. Then it would be `require '/public_html/notifs.php';` based on our root FTP directory.  
   
 At around line 242, add the following code after the line containing `<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->` :
 ```
