@@ -1,0 +1,31 @@
+﻿#notifyWin {
+	padding:3px;
+	margin-left:4px;
+	margin-top:4px;
+	border:1px solid lightblue;
+	position:absolute;
+	background-color:#EFEFEF;
+	max-width: 94%;
+	overflow-x: auto;
+	white-space: nowrap;
+	line-height: 16px;
+}
+#notifyWin a {
+	padding: 0;
+	display: inline-block;
+}
+#notifyWin img, #NotifsHelp img {
+	width: 12px;
+	height: 12px;
+	vertical-align: -0.2em;
+}
+#cbNotifsEmail {
+	margin-left:2px;
+	vertical-align: -0.2em;
+}
+#NotifsHelp {
+	float: right;
+}
+#NotifsHelp_m {
+	margin-left:1em;
+}
