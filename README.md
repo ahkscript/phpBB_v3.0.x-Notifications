@@ -17,8 +17,8 @@ http://ahkscript.org/boards/viewtopic.php?f=2&t=5496
   
 ## Getting started
   
-Once you have phpBB installed, keep in mind the path where phpBB is installed.  
-Say you installed it under `http://example.com/myForum`.  
+Once you have phpBB installed, keep in mind the path of where you had phpBB installed.  
+Say, you installed it under `http://example.com/myForum`.  
   
 You will find the following files in the `src` folder :  
   - json2.min.js
@@ -50,7 +50,6 @@ In `notifs.php` :
 ```
 Update the SQL connection information for the phpBB SQL Database.  
   
-  
 ## Pluging it in
   
 For our example, we are going to use the `subsilver2` theme.  
@@ -58,7 +57,7 @@ Open up the phpBB ACP (Administration Control Panel), then navigate to the follo
 `ACP -> Styles -> Templates -> subsilver2 : Edit`  
   
 Now, select the `overall_header.html` template file.  
-Find the closing tag `</head>` and the following right before it :  
+Find the closing tag `</head>` and add the following code right before it :  
 ```HTML
 <!-- IF not S_IS_BOT -->
 <!-- IF S_USER_LOGGED_IN -->
@@ -71,7 +70,6 @@ var NotifsServerSide_JSON_count = \''.$NotifsServerSide_JSON_count.'\';
 var NotifsServerSide_email_chk = \''.$NotifsServerSide_email_chk.'\';
 </script>';
 <!-- ENDPHP -->
-
 <link rel="stylesheet" href="/css/notifs.css" type="text/css" />
 <script src="/js/notifs.js"></script>
 <script src="/js/json2.min.js"></script>
@@ -79,11 +77,11 @@ var NotifsServerSide_email_chk = \''.$NotifsServerSide_email_chk.'\';
 <!-- ENDIF -->
 ```
   
-At around line 242, add this after line `<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->` :
+At around line 242, add the following code after the line containing `<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->` :
 ```
 &nbsp;&nbsp;<a href="#" id="notifyLink"><img src="{T_THEME_PATH}/images/icon_mini_message.gif" width="12" height="13" alt="*" /> <strong id="notifyCount">Loading...</strong> new notifications</a>
 ```
-Add this before the first instance of `</table>` :  
+Add the following code before the first instance of `</table>` :  
 ```HTML
 <tr>
 	<td class="genmed">
@@ -98,15 +96,15 @@ Add this before the first instance of `</table>` :
 
 ## Finishing off
   
-Now, hit the `Submit` button to save these changes. phpBB should update the cached version for you. The notifications don't appear right next to the "new messages" link. You can try a phpBB cache refresh. To do so, open up the phpBB ACP (Administration Control Panel), then navigate to the following :  
+Now, hit the `Submit` button to save these changes. PhpBB should automatically update the cached version for you. If the "new notifications" link does not appear next to the "new messages" link, you can try a phpBB cache refresh. To do so, open up the phpBB ACP (Administration Control Panel), then navigate to the following :  
 `ACP -> Styles -> Templates -> subsilver2 : Refresh`  
-It will confirm with you. Click the `Yes` button.  
+It will ask for confirmation. Click the `Yes` button.  
   
 #### Congrats, you are done!
   
 ## Credits
   
-This phpBB modification was created by ahkscript forum users [`Bruttosozialprodukt`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=57116) and [`joedf`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=55)  
+This phpBB modification was created by ahkscript forum users [`Bruttosozialprodukt`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=57116) and [`joedf`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=55).  
   
 Released under the [MIT License](http://opensource.org/licenses/MIT) as follows :  
 `Copyright (c) <2014> <ahkscript.org>`
