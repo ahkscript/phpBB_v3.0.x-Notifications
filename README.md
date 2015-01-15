@@ -5,6 +5,11 @@ This is the notification mod used in the ahkscript phpBB forum.
 The one used over at ahkscript has a few tiny differences.  
   
   
+## What is it?
+  
+Please see this great forum topic that should explain everything you need to know about it.  
+http://ahkscript.org/boards/viewtopic.php?f=2&t=5496  
+  
 ## Getting started
   
 Once you have phpBB installed, keep in mind the path where phpBB is installed.  
@@ -93,3 +98,10 @@ Now, hit the `Submit` button to save these changes. phpBB should update the cach
 It will confirm with you. Click the `Yes` button.  
   
 #### Congrats, you are done!
+  
+## Credits
+  
+This phpBB modification was created by ahkscript forum users [`Bruttosozialprodukt`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=57116) and [`joedf`](http://ahkscript.org/boards/memberlist.php?mode=viewprofile&u=55)  
+  
+Released under the [MIT License](http://opensource.org/licenses/MIT) as follows :  
+`Copyright (c) <2014> <ahkscript.org>`
