@@ -97,7 +97,14 @@ function GetNotifications($userId,$limit,$sort = false) {
 	}
 	if ($sort)
 		$notifyArray = ReorderNotifications($notifyArray);
-	return json_encode($notifyArray);
+	return escapeJsonString(json_encode($notifyArray));
+}
+function escapeJsonString($value) { // http://stackoverflow.com/a/3615890/883015
+	# list from www.json.org: (\b backspace, \f formfeed)    
+	$escapers =     array("\\",     "/",   "\"",  "\n",  "\r",  "\t", "\x08", "\x0c");
+	$replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t",  "\\f",  "\\b");
+	$result = str_replace($escapers, $replacements, $value);
+	return $result;
 }
 function ReorderNotifications($notifs) {
 	//Reorder array by "topic_last_post_id" (tlpi), smaller numbers that "topic_last_post_time" (tlpt)
