@@ -93,16 +93,17 @@ function GetNotifications($userId,$limit,$sort = false) {
 	$i = 0;
 	while($row = $q->fetch(PDO::FETCH_ASSOC)) {
 		$notifyArray[$i] = TopicGetInfo($row['topic_id']);
+		$notifyArray[$i]['tt'] = escapeJsonString($notifyArray[$i]['tt']);
 		$i++;
 	}
 	if ($sort)
 		$notifyArray = ReorderNotifications($notifyArray);
-	return escapeJsonString(json_encode($notifyArray));
+	return json_encode($notifyArray);
 }
 function escapeJsonString($value) { // http://stackoverflow.com/a/3615890/883015
 	# list from www.json.org: (\b backspace, \f formfeed)    
-	$escapers =     array("\\",     "/",   "\"",  "\n",  "\r",  "\t", "\x08", "\x0c");
-	$replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t",  "\\f",  "\\b");
+	$escapers = array("\\","/","\"","\n","\r","\t","\x08","\x0c","'","'");
+	$replacements = array("\\\\","\\/","\\\"","\\n","\\r","\\t","\\f","\\b","\'",'\"');
 	$result = str_replace($escapers, $replacements, $value);
 	return $result;
 }
