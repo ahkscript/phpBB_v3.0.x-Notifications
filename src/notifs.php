@@ -100,11 +100,9 @@ function GetNotifications($userId,$limit,$sort = false) {
 		$notifyArray = ReorderNotifications($notifyArray);
 	return json_encode($notifyArray);
 }
-function escapeJsonString($value) { // http://stackoverflow.com/a/3615890/883015 
+function escapeJsonString($value) {
 	$result = str_replace("\\","\\\\", $value);
-	$escapers = array("'",'"');
-	$replacements = array("\'",'\"');
-	$result = str_replace($escapers, $replacements, $result);
+	$result = str_replace('"','\"',$result);
 	return $result;
 }
 function ReorderNotifications($notifs) {
