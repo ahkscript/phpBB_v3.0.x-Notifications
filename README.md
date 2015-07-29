@@ -1,7 +1,7 @@
 phpBB_v3.0.x-Notifications
 =========================================
   
-This was the notification mod used in the ahkscript phpBB v3.0.x forum.
+This was the notification mod used in the ahkscript phpBB v3.0.x forum.  
 The one used over at ahkscript had a few tiny differences.  
   
 - [What is it?](#what-is-it)
